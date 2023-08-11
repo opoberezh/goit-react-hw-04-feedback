@@ -1,4 +1,6 @@
 import { ImSmile, ImSad, ImNeutral } from "react-icons/im";
+import {ButtonStyled } from "./FeedbackOptions.styled";
+
 export const FeedbackOptions =({options, onLeaveFeedback})=>{
     const icons={
         good: <ImSmile/>,
@@ -8,8 +10,8 @@ export const FeedbackOptions =({options, onLeaveFeedback})=>{
 return(
     <>
         {options.map(option => (
-        <button key={option} onClick={() => onLeaveFeedback(option)}>{icons[option]}
-        </button>
+        <ButtonStyled key={option} onClick={() => onLeaveFeedback(option)}>{icons[option]}
+        </ButtonStyled>
       ))}
     </>
 )
