@@ -14,13 +14,22 @@ export const App = () => {
  
  
  const handleFeedback = type => {
- if (type === 'good'){
-  setGood(prevGood => prevGood + 1)
- } else if (type === 'neutral' ){
-  setNeutral(prevNeutral => prevNeutral + 1)
- } else if (type === 'bad') {
-  setBad(prevBad => prevBad + 1)
- }
+  switch(type){
+    case 'good': 
+    setGood(prevGood => prevGood + 1)
+    break;
+
+    case 'neutral':
+    setNeutral(prevNeutral => prevNeutral + 1)
+    break;
+
+    case 'bad':
+    setBad(prevBad => prevBad + 1)
+    break;
+
+    default:
+    break;
+}
 };
 
 const totalFeedback = good + neutral + bad;
